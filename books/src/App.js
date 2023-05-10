@@ -16,6 +16,15 @@ function App() {
     setBooks(latestBooks)
   };
 
+
+  const editBookById = (id, newTitle) => {
+    const updatedBooks = books.map((book) => {
+      if (book.id === id) {
+        return { ...book, title: newTitle}
+      }
+    });
+  }
+
   const deleteBookById = (idToRemove) => {
     const updatedBooks = books.filter((book) => {
       return book.id !== idToRemove
